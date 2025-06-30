@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://coka5div1oqn1"]
+
+[ext_resource type="Script" uid="uid://b8pki4mw7f3sq" path="res://main.gd" id="1_hjfw1"]
+[ext_resource type="PackedScene" uid="uid://bvyx2h8nbyiss" path="res://addons/chatbox/chatbox.tscn" id="2_vbvvw"]
+[ext_resource type="PackedScene" uid="uid://coh05q0ltgc74" path="res://player.tscn" id="3_0hfgw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0e48y"]
+size = Vector2(1048.25, 16)
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_hjfw1")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Chatbox" parent="CanvasLayer" instance=ExtResource("2_vbvvw")]
+offset_left = 16.0
+offset_top = 496.0
+offset_right = -664.0
+offset_bottom = -11.0
+
+[node name="Ground" type="StaticBody2D" parent="."]
+position = Vector2(168, 288)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
+position = Vector2(420.125, 160)
+shape = SubResource("RectangleShape2D_0e48y")
+
+[node name="ColorRect" type="ColorRect" parent="Ground/CollisionShape2D"]
+offset_left = -524.125
+offset_top = -8.0
+offset_right = 523.875
+offset_bottom = 8.0
+size_flags_vertical = 2
+color = Color(0.211765, 0.627451, 0.611765, 1)
+
+[node name="Player" parent="." instance=ExtResource("3_0hfgw")]
+position = Vector2(64, 8)
+
+[editable path="CanvasLayer/Chatbox"]

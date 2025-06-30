@@ -1,0 +1,8 @@
+CollisionShape2D
+ColorRect
+RigidBody2D
+Sprite2D
+CharacterBody2D
+Line2D
+Polygon2D
+CanvasLayer

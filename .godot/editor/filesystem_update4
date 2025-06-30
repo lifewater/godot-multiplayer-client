@@ -1,3 +1,4 @@
-res://node_2d.tscn
-res://client/websocket_client.gd
+res://addons/chatbox/chatbox.tscn
+res://test_level_0.tscn
+res://addons/chatbox/chatbox.gd
 res://main.gd
